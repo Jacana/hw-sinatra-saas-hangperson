@@ -69,6 +69,7 @@ Then /^(?:|I )should be on (.+)$/ do |page_name|
 end
 
 Then /^(?:|I )should see "([^\"]*)"(?: within "([^\"]*)")?$/ do |text, selector|
+  save_and_open_page 
   with_scope(selector) do
     if page.respond_to? :should
       page.should have_content(text)
